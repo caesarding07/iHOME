@@ -1,0 +1,295 @@
+/*
+ * @Author: caesarding 
+ * @Date: 2020-03-11 09:50:54 
+ * @Last Modified by: dingtao
+ * @Last Modified time: 2020-03-27 20:17:05
+ */
+
+* {
+    margin: 0;
+}
+
+:root {
+    --bgcolor: #e4e4e4;
+    --outcolor: #bfbfbf;
+    --bodycolor: #ffffff;
+    --slen: 0.4em;
+    --mlen: 1em;
+    --llen: 2em;
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+    font-family: 宋体;
+}
+
+h2 {
+    background-color: var(--outcolor);
+    padding: 0.2em 0 0.2em 0.3em;
+}
+
+/* #introduce,#show,#wall,#join,#base{
+    margin-top: 0.3em;
+} */
+hr {
+    border: none;
+    height: 3px;
+    background: var(--bgcolor);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.192);
+}
+
+body {
+    background-color: var(--bgcolor);
+}
+
+.container,
+nav,
+#title {
+    max-width: 1000px;
+    margin: auto;
+    background-color: white;
+}
+
+#title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+}
+
+#title img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 0);
+    border: #000000 solid 2px;
+    box-sizing: border-box;
+}
+
+nav span {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav span:hover {
+    background-color: #bfbfbf;
+}
+
+#introduce p {
+    /* padding: 0.1em 1em 0.1em 1em; */
+    padding: var(--slen);
+    text-align: justify;
+    text-indent: 2em;
+}
+
+/* 框子里面的框子使用%单位 可能会好看 */
+.activity div {
+    background: #ffffff;
+    /* width: 45%; */
+    margin-top: 2%;
+    /* margin: 0.4em 0em 0em 0em; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0.1em 0.1em 5px rgba(0, 0, 0, 0.5);
+}
+
+.activity div:hover {
+    transition: all 0.5s;
+    transform: scale(1.05);
+}
+
+b {
+    font-size: 2em;
+    float: left;
+}
+
+.activity div p{
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: justify;
+}
+
+#show a {
+    position: relative;
+    bottom: 0.5em;
+    left: 2em;
+}
+
+.comment {
+    box-sizing: content-box;
+    border: 2px solid var(--bgcolor);
+    margin: var(--slen);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+}
+.photo {
+    /* margin: 0.5em 0.5em 0 0.5em; */
+    margin: var(--slen);
+    width: 4em;
+    height: 4em;
+    min-width: 4em;
+    min-height: 4em;
+    border-radius: 10px;
+    filter: grayscale(25%);
+}
+.comment div h3 {
+    display: flex;
+    justify-content: space-between;
+}
+.comment div p {
+    text-align: justify;
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.comment_reply {
+    margin: var(--slen);
+    display: flex;
+    justify-content: flex-end;
+}
+.comment_reply a {
+    text-decoration: none;
+}
+
+#submit {
+    margin: var(--slen);
+    display: flex;
+    align-items: center;
+}
+
+#input_text {
+    height: 4em;
+    width: 50%;
+    resize: none;
+}
+#join p {
+    margin: var(--slen);
+}
+
+#base {
+    padding: var(--slen);
+    background: #BFBFBF;
+    text-align: center;
+}
+/* 控制 */
+@media screen and (min-width:800px) {
+    .return_top {
+        padding: 10px 10px 10px 10px;
+        right: 0;
+        bottom: 20%;
+        position: fixed;
+        background: #ffffff27;
+        box-shadow: 0 4px 12px 0 rgba(7, 17, 27, 0.1);
+    }
+    .activity {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-color: #ffffff;
+        padding-bottom: 2%;
+    }
+
+    .activity div {
+        width: 45%;
+    }
+
+    .activity div:nth-child(n+5) {
+        display: none;
+    }
+
+    .activity div img {
+        padding: 1em 1em 1em 1em;
+        border-radius: 30px;
+        width: 50%;
+    }
+
+    .activity div p {
+        margin: 1em 0 1em 0;
+        width: 10em;
+        max-height: 10em;
+    }
+    #wall li:nth-child(n+7){
+        display: none;
+    }
+    .comment div p {
+        padding: 0 var(--mlen) 0 var(--mlen);
+    }
+    .comment div h3 {
+        padding: var(--slen);
+    }
+    #submit p {
+        margin: 0 0 var(--slen) var(--slen);
+        width: 20%;
+    }
+    #submit button {
+        position: relative;
+        left: 4em;
+        top: 2em;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .return_top{
+        display: none;
+    }
+    .activity {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #ffffff;
+        padding-bottom: 2%;
+    }
+
+    .activity div {
+        margin: var(--slen);
+    }
+
+    /* 因为手机屏幕较小，所以收缩部分展示内容 */
+    .activity div:nth-child(n+3) {
+        display: none;
+    }
+
+    .activity div img {
+        padding: var(--slen);
+        border-radius: 20px;
+        width: 20%;
+    }
+    .activity div p {
+        padding:0 var(--mlen) var(--mlen) 0;
+        height: 2.3em;
+        max-height: 2.3em;
+    }
+    .comment div p {
+        padding: 0 var(--slen) 0 var(--slen);
+        height: 1.2em;
+        max-height: 1.2em;
+    }
+    #wall li:nth-child(n+6){
+        display: none;
+    }
+    .comment div h3 {
+        padding: 5px;
+    }
+}
+
+
+
